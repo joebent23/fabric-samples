@@ -1,0 +1,53 @@
+name: Deploy to Fabric
+
+on:
+  push:
+    branches:
+      - test
+      - prod
+    paths:
+      - "fabric/**"
+      - ".deploy/**"
+      - ".github/workflows/deploy-to-fabric.yml"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy Fabric items
+    runs-on: ubuntu-latest
+    environment: ${{ github.ref_name }}
+    permissions:
+      contents: read
+    env:
+      TARGET_ENV: ${{ github.ref_name }}
+      ITEMS_IN_SCOPE: '["Notebook","Lakehouse"]'
+      GITDIRECTORY: fabric
+      DEVWORKSPACENAME: ${{ vars.DEV_WORKSPACE_NAME }}
+      TESTWORKSPACENAME: ${{ vars.TEST_WORKSPACE_NAME }}
+      PRODWORKSPACENAME: ${{ vars.PROD_WORKSPACE_NAME }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install fabric-cicd azure-identity requests
+
+      - name: Deploy to Fabric
+        env:
+          AZ_TENANT_ID: ${{ secrets.AZ_TENANT_ID }}
+          AZ_CLIENT_ID: ${{ secrets.AZ_CLIENT_ID }}
+          AZ_SPN_SECRET: ${{ secrets.AZ_SPN_SECRET }}
+        run: |
+          python .deploy/deploy-to-fabric.py \
+            --aztenantid "${AZ_TENANT_ID}" \
+            --azclientid "${AZ_CLIENT_ID}" \
+            --azspsecret "${AZ_SPN_SECRET}" \
+            --items_in_scope "${ITEMS_IN_SCOPE}" \
+            --target_env "${TARGET_ENV}"
