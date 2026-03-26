@@ -11,7 +11,7 @@
 # MARKDOWN ********************
 
 # # Notebook 1
-#
+# 
 # This starter notebook is intentionally simple so the repository can be used
 # as an initial Fabric Git integration target.
 
