@@ -1,0 +1,15 @@
+{
+  "shortcuts": [
+    {
+      "path": "Files/insolvency_1",
+      "name": "insolvency_1",
+      "target": {
+        "oneLake": {
+          "workspaceId": "1ee7df95-0e44-48c9-8996-23ed5fe823ff",
+          "itemId": "22b84878-891a-4647-b303-c1d53d007c0b",
+          "itemPath": "Files/insolvency_1"
+        }
+      }
+    }
+  ]
+}
