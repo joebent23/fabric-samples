@@ -1,4 +1,0 @@
-//List of KQL databases monitored in Workspace 
-EventhouseQueryLogs 
-|distinct DatabaseName 
-|order by DatabaseName asc 
