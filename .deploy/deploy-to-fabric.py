@@ -94,3 +94,6 @@ target_workspace = FabricWorkspace(
 )
 
 publish_all_items(target_workspace)
+
+from fabric_cicd import unpublish_all_orphan_items
+unpublish_all_orphan_items(target_workspace)
