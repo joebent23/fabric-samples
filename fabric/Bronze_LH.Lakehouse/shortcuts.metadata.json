@@ -1,0 +1,38 @@
+[
+  {
+    "name": "landing_sc",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/landing_sc",
+        "itemId": "22b84878-891a-4647-b303-c1d53d007c0b",
+        "workspaceId": "1ee7df95-0e44-48c9-8996-23ed5fe823ff"
+      }
+    }
+  },
+  {
+    "name": "documents_sc",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/documents_sc",
+        "itemId": "22b84878-891a-4647-b303-c1d53d007c0b",
+        "workspaceId": "1ee7df95-0e44-48c9-8996-23ed5fe823ff"
+      }
+    }
+  },
+  {
+    "name": "copy_to_insolvency",
+    "path": "/Files",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Files/copy_to_insolvency",
+        "itemId": "22b84878-891a-4647-b303-c1d53d007c0b",
+        "workspaceId": "1ee7df95-0e44-48c9-8996-23ed5fe823ff"
+      }
+    }
+  }
+]
