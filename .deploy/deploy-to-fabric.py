@@ -58,6 +58,7 @@ def parse_item_types(raw_value: str) -> list[str]:
 
 
 append_feature_flag("enable_shortcut_publish")
+append_feature_flag("enable_lakehouse_unpublish")
 change_log_level("DEBUG")
 
 parser = argparse.ArgumentParser(description="Deploy Fabric items from the repository.")
