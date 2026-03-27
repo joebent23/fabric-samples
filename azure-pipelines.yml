@@ -4,6 +4,8 @@ trigger:
   paths:
     include:
     - fabric/**
+    - .deploy/**
+    - azure-pipelines.yml
 
 parameters:
 - name: items_in_scope
