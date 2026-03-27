@@ -9,7 +9,7 @@ parameters:
 - name: items_in_scope
   displayName: Enter Fabric items to be deployed
   type: string
-  default: '["Notebook","DataPipeline","Lakehouse","SemanticModel","Report","VariableLibrary","Environment"]'
+  default: '["Notebook","DataPipeline","Lakehouse","SemanticModel","Report","VariableLibrary","Environment","CopyJob","Warehouse","MirroredDatabase","Eventhouse","KQLDatabase","KQLQueryset","KQLDashboard","Reflex","Eventstream","SQLDatabase","Dataflow","GraphQLApi"]'
 
 variables:
   - name: target_env
